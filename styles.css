@@ -1,0 +1,47 @@
+*{
+    margin: 0 auto;
+}
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin:0;
+    padding:0;
+    width:100%;
+}
+input{
+    width:10%;
+    margin: 0 auto;
+}
+button{
+    width:10%;
+    margin:0 auto;
+}
+#setup {
+    margin: 20px;
+    display:grid;
+
+    align-self:center;
+    width:100%;
+}
+
+#teams, #matches {
+    margin: 20px;
+}
+
+.team {
+    display: inline-block;
+    width: 45%;
+    vertical-align: top;
+}
+
+.team h2 {
+    text-align: center;
+}
+
+.player {
+    list-style-type: none;
+}
+
+.court {
+    margin: 10px 0;
+}
