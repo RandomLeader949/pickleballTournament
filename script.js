@@ -3,12 +3,13 @@ let teamB = [];
 let pastPairsA = [];
 let pastPairsB = [];
 let rounds = 1;
-
+document.getElementById("pScreen").style.display = "none";
 function setupTeams() {
     const teamASize = parseInt(document.getElementById('teamASize').value);
     const teamBSize = parseInt(document.getElementById('teamBSize').value);
     const numCourts = parseInt(document.getElementById('numCourts').value);
-
+    document.getElementById("sScreen").style.display = "none";
+    document.getElementById("pScreen").style.display = "block";
     teamA = generatePlayers('A', teamASize);
     teamB = generatePlayers('B', teamBSize);
 
@@ -45,7 +46,6 @@ function displayTeams() {
         </div>
     `;
 }
-
 function setupMatches(numCourts) {
     const matchesDiv = document.getElementById('matches');
     matchesDiv.innerHTML = `<h2>Round ${rounds}</h2>`;
@@ -135,4 +135,3 @@ function nextRound() {
     const numCourts = parseInt(document.getElementById('numCourts').value);
     setupMatches(numCourts);
 }
-
