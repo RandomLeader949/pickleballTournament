@@ -16,7 +16,7 @@ body {
     padding: 0;
     width: 100%;
     height: 100vh;
-    background: linear-gradient(45deg, #ffffff 10%, #ffdada 100%) no-repeat;
+    background:transparent;
 }
 
 input {
@@ -84,8 +84,14 @@ button {
     background-color: transparent;
 }
 #pScreen{
-    background: linear-gradient(45deg, #ffffff 10%, #ffdada 100%) no-repeat;
-
+    margin:0;
+    padding:1vh;
+    background: linear-gradient(75deg, rgb(255, 227, 227) 0%, rgb(255, 243, 222) 16%, rgb(255, 255, 204) 32%, rgb(223, 255, 223) 48%, rgb(206, 206, 255) 64%, rgb(255, 208, 255) 100%) no-repeat;
+    height:fit-content;
+}
+#sScreen{
+    background: linear-gradient(45deg, rgb(255, 227, 227) 0%, rgb(255, 243, 222) 16%, rgb(255, 255, 204) 32%, rgb(223, 255, 223) 48%, rgb(206, 206, 255) 64%, rgb(255, 208, 255) 100%) no-repeat;
+    height:100vh;
 }
 ol{
     background-color: transparent;
