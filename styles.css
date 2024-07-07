@@ -34,7 +34,7 @@ input {
 }
 
 button {
-    width: 10%;
+    width: fit-content;
     height: 10vh;
     margin: 0 auto;
     padding: 1vh;
