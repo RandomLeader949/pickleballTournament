@@ -3,7 +3,11 @@ let teamB = [];
 let pastPairsA = [];
 let pastPairsB = [];
 let rounds = 1;
+let aScore = 0;
+let bScore = 0;
 document.getElementById("pScreen").style.display = "none";
+const scores = document.getElementById("scores");
+
 function setupTeams() {
     const teamASize = parseInt(document.getElementById('teamASize').value);
     const teamBSize = parseInt(document.getElementById('teamBSize').value);
@@ -12,11 +16,9 @@ function setupTeams() {
     document.getElementById("pScreen").style.display = "block";
     teamA = generatePlayers('A', teamASize);
     teamB = generatePlayers('B', teamBSize);
-
     pastPairsA = [];
     pastPairsB = [];
     rounds = 1;
-
     displayTeams();
     setupMatches(numCourts);
 }
@@ -49,7 +51,6 @@ function displayTeams() {
 function setupMatches(numCourts) {
     const matchesDiv = document.getElementById('matches');
     matchesDiv.innerHTML = `<h2>Round ${rounds}</h2>`;
-
     let availableA = [...teamA];
     let availableB = [...teamB];
     let unpairedA = [];
@@ -58,13 +59,16 @@ function setupMatches(numCourts) {
     for (let i = 1; i <= numCourts; i++) {
         const court = document.createElement('div');
         court.className = 'court';
+        
         const pairA = getUniquePair(availableA, pastPairsA, unpairedA);
         const pairB = getUniquePair(availableB, pastPairsB, unpairedB);
 
         court.innerHTML = `
             <h3>Court ${i}</h3>
+            <button id="winner" onclick="teamAwinner()">winner team A</button>
             <div class="team-a-pair">${pairA}</div>
             <div class="team-b-pair">${pairB}</div>
+            <button id="winner" onclick="teamBwinner()">winner team B</button>
         `;
         matchesDiv.appendChild(court);
     }
@@ -134,4 +138,16 @@ function getUniquePair(team, pastPairs, unpaired) {
 function nextRound() {
     const numCourts = parseInt(document.getElementById('numCourts').value);
     setupMatches(numCourts);
+}
+function teamAwinner(){
+    aScore++;
+    updateScores();
+}
+function teamBwinner(){
+    bScore++;
+    updateScores();
+}
+function updateScores(){
+    scores.innerHTML = aScore + "-" + bScore;
+
 }
